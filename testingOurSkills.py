@@ -47,14 +47,14 @@ class ninja_challange(unittest.TestCase):
       text = driver.find_element(By.XPATH, xpath)
       return text.text
 
-    value1 = paragrah_text('//*[@id="block-05ea3afedc551e378bdc"]/div/div[3]/p')
-    value2 = paragrah_text('//*[@id="block-05ea3afedc551e378bdc"]/div/div[4]/p')
+    value1 = paragrah_text('//*[@id="block-05ea3afedc551e378bdc"]/div/div[3]/p')  # 3000
+    value2 = paragrah_text('//*[@id="block-05ea3afedc551e378bdc"]/div/div[4]/p')  # 2000
     richest_merchant = ''
 
     if value1 > value2:
-      richest_merchant = paragrah_text('//*[@id="block-05ea3afedc551e378bdc"]/div/div[3]/span/b')
+      richest_merchant = paragrah_text('//*[@id="block-05ea3afedc551e378bdc"]/div/div[3]/span/b')  # Jessica
     else:
-      richest_merchant = paragrah_text('//*[@id="block-05ea3afedc551e378bdc"]/div/div[4]/span/b')
+      richest_merchant = paragrah_text('//*[@id="block-05ea3afedc551e378bdc"]/div/div[4]/span/b')  # Bernard 
 
     name_richest = driver.find_element(By.ID, 'r3Input')
     name_richest.send_keys(richest_merchant)
@@ -67,12 +67,9 @@ class ninja_challange(unittest.TestCase):
     if passed == 'Success!':
       finish_button = driver.find_element(By.ID, 'checkButn')
       finish_button.click()
+      sleep(3)
     else:
       print('you did wrong')
-
-
-    sleep(4)
-
 
 
   def tearDown(self):  # we close the web driver in order to save resources. 
