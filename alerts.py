@@ -1,14 +1,17 @@
 import unittest
 from selenium import webdriver
 from time import sleep
-from selenium.webdriver.common.by import By
 from selenium.webdriver.common.by import By  # used to select the alerts 
+
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 class alets_challenge(unittest.TestCase):
 
   def setUp(self):
-    self.driver = webdriver.Chrome(executable_path= './chromedriver')
+    # self.driver = webdriver.Chrome(executable_path= './chromedriver')
+    self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     driver = self.driver
     driver.get('https://techstepacademy.com/training-ground')
 
@@ -17,7 +20,7 @@ class alets_challenge(unittest.TestCase):
   def test_first_section(self):
     driver = self.driver
 
-    def button_test(css_selector):  # ! function to test the buttons and apply the "DRY" metodology
+    def button_check(css_selector):  # ! function to test the buttons and apply the "DRY" metodology
       button = driver.find_element(By.CSS_SELECTOR, css_selector).click() 
       alert = driver.switch_to.alert  # move the focus of browser to the alert
       sleep(1)
@@ -32,10 +35,10 @@ class alets_challenge(unittest.TestCase):
     sleep(1)
 
     button1 = '#b1'  # this is the css selector 
-    button_test(button1)
+    button_check(button1)
 
     button2 = '#b2'
-    button_test(button2)
+    button_check(button2)
 
     sleep(1)
 
@@ -48,21 +51,24 @@ class alets_challenge(unittest.TestCase):
     sleep(1)
 
     button3 = '#b3'
-    button_test(button3)
+    button_check(button3)
 
     button4 = '#b4'
-    button_test(button4)
+    button_check(button4)
 
     sleep(1)
 
-      # ? Dropdonw section
+    # ? Dropdonw section
 
-    def test_dropdonw(self):
-      driver = self.driver
+  # def test_dropdonw(self):
+  #   driver = self.driver
+
+  #   options = driver.find_element(By.NAME, 'mySelect')
+  #   sleep(2)
 
 
-  def tearDown(self):
-    self.driver.close()
+  # def tearDown(self):
+  #   self.driver.close()
 
 
 if __name__ == "__main__":
