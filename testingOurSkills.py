@@ -1,5 +1,3 @@
-from importlib.machinery import BYTECODE_SUFFIXES
-from operator import truediv
 import unittest
 from selenium import webdriver
 from time import sleep
