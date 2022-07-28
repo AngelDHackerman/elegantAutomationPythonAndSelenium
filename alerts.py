@@ -1,4 +1,3 @@
-from lib2to3.pgen2 import driver
 import unittest
 from selenium import webdriver
 from time import sleep
@@ -12,7 +11,6 @@ class alets_challenge(unittest.TestCase):
     self.driver = webdriver.Chrome(executable_path= './chromedriver')
     driver = self.driver
     driver.get('https://techstepacademy.com/training-ground')
-
 
       # ? First input field and first 2 buttons with alerts
 
@@ -37,7 +35,32 @@ class alets_challenge(unittest.TestCase):
     alert.accept()  # we accept the alert
     sleep(1)
 
-    sleep(2)
+    sleep(1)
+
+      # ? Second section of the web page
+
+  def test_second_section(self):
+    driver = self.driver
+
+    second_input = driver.find_element(By.CSS_SELECTOR, '#ipt2')
+    second_input.send_keys('This is a testing for the input')
+    sleep(1)
+    second_input.clear()  # we clean the input 
+    sleep(1)
+
+    button3 = driver.find_element(By.CSS_SELECTOR, '#b3').click()
+    alert = driver.switch_to.alert  # move the focus of browser to the alert
+    sleep(1)
+    alert.accept()  # we accept the alert
+    sleep(1)
+
+    button4 = driver.find_element(By.CSS_SELECTOR, '#b4').click()
+    alert = driver.switch_to.alert  # move the focus of browser to the alert
+    sleep(1)
+    alert.accept()  # we accept the alert
+    sleep(1)
+
+    sleep(1)
 
 
   def tearDown(self):
