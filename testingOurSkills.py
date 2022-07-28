@@ -19,8 +19,7 @@ class ninja_challange(unittest.TestCase):
     riddle_stone = driver.find_element(By.ID, 'r1Input')  
     riddle_stone.send_keys('rock')  # rock is the answer
 
-    answer_button_stone = driver.find_element(By.ID, 'r1Btn')
-    answer_button_stone.click()
+    answer_button_stone = driver.find_element(By.ID, 'r1Btn').click()
 
     sleep(1)
 
@@ -32,8 +31,7 @@ class ninja_challange(unittest.TestCase):
     riddle_secrets = driver.find_element(By.ID, 'r2Input')
     riddle_secrets.send_keys(answer)
 
-    answer_button_secrets = driver.find_element(By.ID, 'r2Butn')
-    answer_button_secrets.click()
+    answer_button_secrets = driver.find_element(By.ID, 'r2Butn').click()
 
     paragraph_to_test = driver.find_element(By.XPATH, '/html/body/div[1]/section/div/div/div/div[2]/div/div[1]/h4')
 
@@ -57,8 +55,7 @@ class ninja_challange(unittest.TestCase):
     name_richest = driver.find_element(By.ID, 'r3Input')
     name_richest.send_keys(richest_merchant)
 
-    answer_button_richest = driver.find_element(By.ID, 'r3Butn')
-    answer_button_richest.click()
+    answer_button_richest = driver.find_element(By.ID, 'r3Butn').click()
 
       # check if the answer is correct: 
     passed = paragrah_text('//*[@id="successBanner2"]/h4')
