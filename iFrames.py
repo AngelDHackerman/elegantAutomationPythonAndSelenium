@@ -25,7 +25,13 @@ class iFrames(unittest.TestCase):
 
     input_iFrame = driver.find_element(By.XPATH, '//*[@id="ipt1"]')
     input_iFrame.send_keys('This is a test')
-    sleep(2)
+    sleep(3)
+
+    driver.switch_to.default_content()  # ! this is how we switch back into the main page
+
+    news_button = driver.find_element(By.XPATH, '//*[@id="yui_3_17_2_1_1659067984796_211"]')
+    news_button.click()
+    sleep(3)
 
 
   def tearDown(self):
