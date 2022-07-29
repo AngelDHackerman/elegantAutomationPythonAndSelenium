@@ -1,12 +1,11 @@
 import unittest
-from xml.dom.minidom import Element
 from selenium import webdriver
 from time import sleep
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait  # * this make the broser wait (this is to wait the page API)
 from selenium.webdriver.support import expected_conditions as EC 
 
-  # this is the new standar in order to get the URL's address 
+  # this is the new standar in order to setup the web driver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
