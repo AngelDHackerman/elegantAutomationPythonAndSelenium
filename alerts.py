@@ -1,7 +1,9 @@
+from select import select
 import unittest
 from selenium import webdriver
 from time import sleep
-from selenium.webdriver.common.by import By  # used to select the alerts 
+from selenium.webdriver.common.by import By  # * used to select the alerts 
+from selenium.webdriver.support.ui import Select  # * used to select the dropdonw menus
 
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
@@ -60,15 +62,14 @@ class alets_challenge(unittest.TestCase):
 
     # ? Dropdonw section
 
-  # def test_dropdonw(self):
-  #   driver = self.driver
+    select = Select(driver.find_element(By.ID, 'sel1'))  # selected the dropdown menu
+    select.select_by_value('first')
+    sleep(1)
+    select.select_by_value('second')
+    sleep(1)
+    select.select_by_value('third')
+    sleep(1)
 
-  #   options = driver.find_element(By.NAME, 'mySelect')
-  #   sleep(2)
-
-
-  # def tearDown(self):
-  #   self.driver.close()
 
 
 if __name__ == "__main__":
