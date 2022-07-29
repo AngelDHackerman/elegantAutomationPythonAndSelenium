@@ -1,5 +1,3 @@
-from lib2to3.pgen2 import driver
-from socket import IPV6_UNICAST_HOPS
 import unittest
 from selenium import webdriver
 from time import sleep
@@ -29,7 +27,7 @@ class iFrames(unittest.TestCase):
 
     driver.switch_to.default_content()  # ! this is how we switch back into the main page
 
-    news_button = driver.find_element(By.XPATH, '//*[@id="yui_3_17_2_1_1659067984796_211"]')
+    news_button = driver.find_element(By.XPATH, '//*[@id="topNav"]/nav/ul/li[3]/a')
     news_button.click()
     sleep(3)
 
