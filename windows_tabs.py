@@ -25,9 +25,14 @@ class windows_tabs(unittest.TestCase):
     driver2.get('http://google.com')
 
   def test_windows(self):
-    driver1 = self.driver1
-    driver2 = self.driver2
-    sleep(10)
+    driver1 = self.driver1  # this manipulate the first window
+    driver2 = self.driver2  # this manipulate the second window
+    sleep(5)
+
+      # ? Opening tabs in the browser 
+    driver1.execute_script('window.open("http://google.com","_blank");')
+    driver2.execute_script('window.open("http://platzi.com","_blank");')
+    sleep(5)
 
 if __name__ == "__main__":
   unittest.main(verbosity= 2)
