@@ -1,10 +1,10 @@
-from select import select
 import unittest
 from selenium import webdriver
 from time import sleep
 from selenium.webdriver.common.by import By  # * used to select the alerts 
 from selenium.webdriver.support.ui import Select  # * used to select the dropdonw menus
 
+  # this is the new standar in order to get the URL's address 
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
@@ -63,9 +63,9 @@ class alets_challenge(unittest.TestCase):
     # ? Dropdonw section
 
     select = Select(driver.find_element(By.ID, 'sel1'))  # selected the dropdown menu
-    select.select_by_value('first')
+    select.select_by_value('first')  # //*[@id="sel1"]/option[1]
     sleep(1)
-    select.select_by_value('second')
+    select.select_by_value('second')  # //*[@id="sel1"]/option[2]
     sleep(1)
     select.select_by_value('third')
     sleep(1)
